@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: azure;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: black;
+}
+
+.link-bio{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 40% auto;
+    gap: 20px;
+
+}
+
+.link-bio img{
+
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+
+}
+.link-bio h1{
+    font-family: 'Poller One', cursive;
+    font-size: 40px;
+}
+
+.link-bio a {
+
+    background-color: rgb(119, 136, 153);
+    text-decoration: none;
+    color: azure;
+    text-transform: uppercase;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border: solid 2px color rgb(119, 136, 153);
+    border-radius: 10px;
+
+
+
+}
+
+.link-bio a:hover{
+ background-color: azure;
+ color: lightslategray;
+}
+
+.link-bio {
+    position: relative;
+  }
+  
+  .link-bio {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .imagem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+
+.floating-images {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .floating-images img {
+    position: absolute;
+    animation: float 10s infinite;
+    width:30%;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(300%, 0);
+    }
+    50% {
+      transform: translate(300%, 150%);
+    }
+    75% {
+      transform: translate(0, 100%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  
