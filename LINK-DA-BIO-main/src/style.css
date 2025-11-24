@@ -1,0 +1,139 @@
+:root{
+  --bg: #000;
+  --text: azure;
+  --muted: rgb(119, 136, 153);
+  --accent-hover: lightslategray;
+  --radius: 10px;
+  --gap: 20px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text);
+  font-family: sans-serif;
+}
+
+
+html, body {
+  height: 100%;
+}
+
+body{
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.link-bio{
+  position: relative;
+  z-index: 10;       
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap);
+  width: 100%;
+  max-width: 420px;
+  padding: 28px;
+  margin: 0 auto;
+}
+
+
+.link-bio img{
+  width: 150px;
+  height: 150px;
+  border-radius: var(--radius);
+  object-fit: cover;
+  display: block;
+}
+
+.link-bio h1{
+  font-family: 'Poller One', cursive;
+  font-size: 40px;
+  line-height: 1;
+  text-align: center;
+}
+
+.link-bio a{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background-color: var(--muted);
+  color: var(--text);
+  border: 2px solid var(--muted);
+  transition: background-color .18s ease, color .18s ease, transform .08s ease;
+}
+
+.link-bio a:hover{
+  background-color: var(--text);
+  color: var(--accent-hover);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+
+.floating-images {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;             
+  pointer-events: none;    
+}
+
+.floating-images img {
+  position: absolute;
+  animation: float 10s infinite;
+  width: 30%;
+  pointer-events: none;
+}
+
+
+@keyframes float {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(300%, 0); }
+  50%  { transform: translate(300%, 150%); }
+  75%  { transform: translate(0, 100%); }
+  100% { transform: translate(0, 0); }
+}
+
+
+@media (max-width: 480px){
+  .link-bio {
+    max-width: 95%;
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .link-bio img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .link-bio h1 {
+    font-size: 28px;
+  }
+
+  .link-bio a {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .floating-images img {
+    width: 45%;
+  }
+}
