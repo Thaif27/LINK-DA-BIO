@@ -1,6 +1,6 @@
 
 function moveRandomly(element) {
-    const duration = 6000 + Math.random() * 4000; // entre 6 e 10s por movimento
+    const duration = 7000 + Math.random() * 4000;
 
     const maxX = window.innerWidth - element.clientWidth;
     const maxY = window.innerHeight - element.clientHeight;
@@ -18,3 +18,4 @@ window.onload = () => {
     const imgs = document.querySelectorAll(".floating-images img");
     imgs.forEach(img => moveRandomly(img));
 };
+/*alterações 2*/ 

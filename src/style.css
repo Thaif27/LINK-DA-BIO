@@ -1,11 +1,10 @@
-/* Zera tudo */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fundo geral */
+
 body {
     background: linear-gradient(135deg, #000428, #004e92);
     height: 100vh;
@@ -13,16 +12,16 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "Poppins", sans-serif;
-    overflow: hidden; /* impede scroll causado pelas imagens */
+    overflow: hidden; /
 }
 
-/* Centralização do container */
+
 .link-bio {
     position: relative;
-    z-index: 10; /* acima das imagens flutuantes */
+    z-index: 10; 
 }
 
-/* Card estilo vidro */
+
 .card {
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(15px);
@@ -35,7 +34,7 @@ body {
     animation: fadeIn 1.2s ease;
 }
 
-/* Foto */
+
 .profile-photo {
     width: 140px;
     height: 140px;
@@ -45,7 +44,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Nome */
+
 .card h1 {
     font-size: 24px;
     color: #fff;
@@ -53,7 +52,7 @@ body {
     font-weight: 600;
 }
 
-/* Botões */
+
 .btn {
     display: block;
     text-decoration: none;
@@ -67,14 +66,12 @@ body {
     transition: .3s ease;
 }
 
-/* Hover bonito */
+
 .btn:hover {
     background: rgba(255,255,255,0.30);
     transform: translateY(-4px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
-
-/* Animação do card */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(30px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -95,3 +92,4 @@ body {
     width: 18%;
     opacity: 0.9;
 }
+/* alterações 2 */
