@@ -1,139 +1,97 @@
-:root{
-  --bg: #000;
-  --text: azure;
-  --muted: rgb(119, 136, 153);
-  --accent-hover: lightslategray;
-  --radius: 10px;
-  --gap: 20px;
+/* Zera tudo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: var(--text);
-  font-family: sans-serif;
+/* Fundo geral */
+body {
+    background: linear-gradient(135deg, #000428, #004e92);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden; /* impede scroll causado pelas imagens */
 }
 
-
-html, body {
-  height: 100%;
+/* Centralização do container */
+.link-bio {
+    position: relative;
+    z-index: 10; /* acima das imagens flutuantes */
 }
 
-body{
-  background-color: var(--bg);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 24px;
-  position: relative;
-  overflow: hidden;
+/* Card estilo vidro */
+.card {
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(15px);
+    padding: 40px 30px;
+    width: 330px;
+    border-radius: 22px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    animation: fadeIn 1.2s ease;
 }
 
-
-.link-bio{
-  position: relative;
-  z-index: 10;       
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--gap);
-  width: 100%;
-  max-width: 420px;
-  padding: 28px;
-  margin: 0 auto;
+/* Foto */
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.5);
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
-
-.link-bio img{
-  width: 150px;
-  height: 150px;
-  border-radius: var(--radius);
-  object-fit: cover;
-  display: block;
+/* Nome */
+.card h1 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-.link-bio h1{
-  font-family: 'Poller One', cursive;
-  font-size: 40px;
-  line-height: 1;
-  text-align: center;
+/* Botões */
+.btn {
+    display: block;
+    text-decoration: none;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 12px;
+    font-size: 18px;
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: .3s ease;
 }
 
-.link-bio a{
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 20px;
-  padding: 14px 16px;
-  border-radius: var(--radius);
-  background-color: var(--muted);
-  color: var(--text);
-  border: 2px solid var(--muted);
-  transition: background-color .18s ease, color .18s ease, transform .08s ease;
+/* Hover bonito */
+.btn:hover {
+    background: rgba(255,255,255,0.30);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
-.link-bio a:hover{
-  background-color: var(--text);
-  color: var(--accent-hover);
-  transform: translateY(-2px);
-  cursor: pointer;
+/* Animação do card */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
-
 
 .floating-images {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;             
-  pointer-events: none;    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .floating-images img {
-  position: absolute;
-  animation: float 10s infinite;
-  width: 30%;
-  pointer-events: none;
-}
-
-
-@keyframes float {
-  0%   { transform: translate(0, 0); }
-  25%  { transform: translate(300%, 0); }
-  50%  { transform: translate(300%, 150%); }
-  75%  { transform: translate(0, 100%); }
-  100% { transform: translate(0, 0); }
-}
-
-
-@media (max-width: 480px){
-  .link-bio {
-    max-width: 95%;
-    padding: 18px;
-    gap: 12px;
-  }
-
-  .link-bio img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .link-bio h1 {
-    font-size: 28px;
-  }
-
-  .link-bio a {
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  .floating-images img {
-    width: 45%;
-  }
+    position: absolute;
+    width: 18%;
+    opacity: 0.9;
 }
